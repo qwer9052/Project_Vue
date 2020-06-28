@@ -13,26 +13,26 @@
     <link rel="stylesheet" href="../css/reset.css">
 
     <!-- vue 스크립트 플러그인 임포트   -->
-    
+
 
 </head>
 
 <body>
     <xmp>
-      Vue 인스턴스 속성은 e dt mc^2 life cycel 이다.
-      Vue 인스턴스 생성 방법을 반복 학습한다.
+        Vue 인스턴스 속성은 e dt mc^2 life cycel 이다.
+        Vue 인스턴스 생성 방법을 반복 학습한다.
 
-      실습 1.
+        실습 1.
         2개의 "{{message}}" 중에 첫번째에만 "실습 완성 축하!!!!!" 가 나오게 작성하시오.
         주어진 태그를 변경하지 않고 완성하는 것을 첫번째로 하나
         태그를 바꾸거나 태그의 속성을 추가해서 완성해도 됩니다.
 
-      학습할 내용
-          CSS 태그 선택자에 대해 학습한다.
-          Vue 인스턴스 속성 el, data 에 대해서 학습한다.
-          Vue 인스턴스 생성법을 복습한다.
+        학습할 내용
+        CSS 태그 선택자에 대해 학습한다.
+        Vue 인스턴스 속성 el, data 에 대해서 학습한다.
+        Vue 인스턴스 생성법을 복습한다.
 
-     [참조]page 40
+        [참조]page 40
     </xmp>
     <hr>
 
@@ -46,3 +46,24 @@
 </body>
 
 </html>
+
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"> /* vue 플러그인 임포트 */</script>
+<script src="https://unpkg.com/vuex@3.3.0/dist/vuex.js"> /* vuex 플러그인 임포트 */</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"> /* JSX를 자바스크립트로 변환 */</script>
+<script src="https://unpkg.com/vue-router@3.1.6/dist/vue-router.js"> /* vue 라우터 플러그인 임포트 */</script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"> /* axios : vue 비동기 처리 플러그인 임포트 */</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> /* jQuery library */</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> /* Popper library */</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> /* bootstrap library */</script>
+
+<script>
+
+    new Vue({
+        el: "div",
+        data: {
+            message: "asdasdad"
+        }
+    })
+
+
+</script>
