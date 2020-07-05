@@ -19,7 +19,8 @@
     <xmp>
         문제.
         1. app1 의 message에 '콧수염 괄호를 이용한 데이터 출력' 가 바인딩 되게 하시오
-        2. app2 의 message에 template 속성을 사용하여 '<p>template 속성을 이용한 데이터 출력</p>' 가 바인딩 되게 하시오.
+        2. app2 의 message에 template 속성을 사용하여 '<p>template 속성을 이용한 데이터 출력{{message}}</p>' 가 바인딩 되게 하시오.
+        인스턴스에 template 속성을 설정하는 경우 " 사랑해" 는 사라지는가?
     </xmp>
     <hr>
 
@@ -29,9 +30,37 @@
         </div>
 
         <div id="app2">
-            사랑해~~~
+            <template>
+                사랑해~~~
+            </template>
         </div>
     </div>
 </body>
+
 </html>
+
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"> /* vue 플러그인 임포트 */</script>
+
+<script>
+    new Vue({
+        el: "#app1",
+        data : {
+            message : "asdasd",
+        },
+    })
+
+    new Vue({
+        el: "#app2",
+        data:{
+            message : "<i>template속성을 이용한 데이터 출력</i>"
+        },
+        template : "<p>{{message}}</p>",
+    })
+
+
+</script>
+
+
+
+
 

@@ -119,5 +119,78 @@ select 에 change 이벤트 핸들러를 작성하시오.
 
 </html>
 
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
 
-
+<script>
+    
+    var url = ["../images/but1.gif", "../images/but2.gif"];
+    var url2 = ["../images/img_swap_off.png", "../images/img_swap_on.png"];
+
+    new Vue({
+        el: "#app",
+        data:{
+            img_image3 : "",
+            img_select : "",
+            img_but1 : url,
+            img_swap : url2
+        },
+        template : null,
+        methods :{
+            imageclick : function(event){
+                event.preventDefault();
+                console.log(event.target.href);
+                this.img_image3 = event.target.href ;
+            },
+            imageover : function(e){
+                if(e.target.id === "but1"){
+                    e.target.src = this.img_but1[1];
+                }else if(e.target.id === "img-swap"){
+                    e.target.src = this.img_swap[1];
+                }else{
+                    
+                }
+            },
+            imageout : function(e){
+                if(e.target.id === "but1"){
+                    e.target.src = this.img_but1[0];
+                }else if(e.target.id === "img-swap"){
+                    e.target.src = this.img_swap[0];
+                }else{
+                    
+                }
+            },
+            spanmouseover : function(event){
+                event.target.style.backgroundColor ="yellow";
+            },
+            spanmousedown : function(e){
+                event.target.style.backgroundColor = "blue";
+            },
+            spanmouseup : function(e){
+                event.target.style.backgroundColor = "pink";
+            },
+            spanmouseout : function(e){
+                event.target.style.backgroundColor = "red";
+            },
+            selectchange : function(e){
+                console.log(e.target.value);
+                this.img_select = e.target.value;
+
+                ID.style.borderColor = "yellow";
+                ID.value= e.target.html;
+            }
+
+
+
+
+
+
+
+
+        },
+    });
+
+
+
+
+
+</script>

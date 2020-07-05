@@ -23,9 +23,82 @@
             create -> mount -> update -> destroy
 
         Vue 라이프 사이클 단계 속성과 목적을 이해한다
-        <img src="../images/vue_life_cycle.png">
+
+        기능 추가
+        1. 버튼을 만들고 클릭 이벤트를 설정한다.
+           버튼 추가시 vue13-10 예제를 참조하여 태그를 추가 하시오
+        2. 버튼을 클릭하면 message 값을 자신의 이름으로 바꾼다.
+
+        
 
         [참조]page 44~50
     </pre>
+    <div id="app">
+        {{message}}
+        <input type="button" v-on:click="btn" value="버튼" >
+    </div>
+
+
 </body>
 </html>
+
+
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"/> /* vue 플러그인 임포트 */</script>
+
+
+<script>
+    new Vue({
+        el:"#app",
+        data : {
+            message : "hello",
+        },
+        template: null,
+        methods : {
+            btn : function () {
+                console.log(this.$data.message);
+                
+                var meee = this.message.split('').reverse().join('');
+                console.log(meee);
+               // this.message = meee;
+                this.$set(this.$data, 'message', meee);
+            }
+        },
+        compnents : null,
+        computed : null,
+        watch : null,
+
+        beforeCreate : function(){
+
+        },
+        created         : function(){console.log("created      ")},
+        beforeMount     : function(){console.log("beforeMount  ")},
+        mounted         : function(){console.log("mounted      ")},
+        beforeUpdate    : function(){console.log("beforeUpdate ")},
+        updated         : function(){console.log("updated      ")},
+        beforeDestroy   : function(){console.log("beforeDestroy")},
+        destroyed       : function(){console.log("destroyed    ")}
+
+    })    
+    
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

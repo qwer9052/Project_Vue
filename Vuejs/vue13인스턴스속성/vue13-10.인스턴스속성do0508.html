@@ -18,7 +18,7 @@
         }
 
         p>span {
-            border: 1px dashed blue;
+            border: 1px dashed red;
             margin: 0 10px;
             padding: 5px 10px;
         }
@@ -55,6 +55,7 @@
     <div id="app">
         <input v-model="message">
         <button v-on:click="reverseMsg">문자열 역순</button>
+        <p>{{message}}</p>
         <p>methods 속성을 이용한 수동 반영: <span>{{ methodscopy }}</span></p>
         <p>watch 속성을 자동 반영: <span>{{ watchcopy }}</span></p>
         <p>computed 속성을 자동 반영: <span>{{ computedcopy }}</span></p>
@@ -67,31 +68,42 @@
 
 
 <script src="https://unpkg.com/vue@2.5.16/dist/vue.js"> /* vue 플러그인 임포트 */</script>
-<script src="https://unpkg.com/vuex@3.3.0/dist/vuex.js"> /* vuex 플러그인 임포트 */</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"> /* JSX를 자바스크립트로 변환 */</script>
-<script src="https://unpkg.com/vue-router@3.1.6/dist/vue-router.js"> /* vue 라우터 플러그인 임포트 */</script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"> /* axios : vue 비동기 처리 플러그인 임포트 */</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> /* jQuery library */</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> /* Popper library */</script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> /* bootstrap library */</script>
-
-
-
 
 <script>
-
 
     new Vue({
         el: "#app",
         data: {
+            message: 'asd213q eq2ewe',
+            methodscopy:"q",
+            watchcopy:"w",
         },
+        template : null,
         methods: {
-            reverseMsg: function () {
-                // console.log(this.$data.message);
-                // this.message = this.message.split('').reverse().join('');
-                // return this.message;
+            reverseMsg: function (event) {
+                console.log(this.$data.message);
+                
+                var meee = this.message.split('').reverse().join('');
+                console.log(meee);
+               // this.message = meee;
+                this.$set(this.$data, 'message', meee);
             },
         },
+        components : null,
+        computed : {
+            //무조건 return 해야함 
+            computedcopy : function(){
+                return this.message;
+            }
+
+        },
+        watch : {
+            message : function(val){
+                console.log("message의 값이 바뀐다 :" + val);
+                this.$data.watch = val;
+            }
+        }
+
 
     })
 

@@ -12,8 +12,9 @@
     <!-- CSS import -->
     <link rel="stylesheet" href="../css/reset.css">
     <style lang="">
-        ul {
-            list-style-type: disc;
+        ul li {
+            display: inline-block;
+            list-style-type: none;
         }
 
         span {
@@ -55,7 +56,8 @@
         <p>
             <ul>
                 <!-- javascript for( var system in  systems); 문과 같다ㅈ -->
-                <li v-for="system in systems">{{ system }}</li>
+                <li v-for="system in systems">
+                    <span>{{ system }}</span></li>
             </ul>
         </p>
         <p>
@@ -69,7 +71,7 @@
         <div>
             <h2>Object Arrary rendered with v-for:</h2>
             <select name="" id="">
-                <option v-for="option in options">
+                <option v-for="option in options" v-bind:key="value">
                     {{ option.text }} : {{ option.value}}
                 </option>
             </select>
@@ -79,3 +81,44 @@
 </body>
 
 </html>
+
+
+
+
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+
+
+<script>
+
+    new Vue({
+        el : "#app",
+        data : {
+            systems : "12345",
+            arr : "12345"
+        },
+        method : {
+            clickBind : function(e){
+            }
+        },
+    })
+
+    new Vue({
+        el : "#app1",
+        data : {
+            options : [
+                { text: 'One', value: 'A' },
+                { text: 'Two', value: 'B' },
+                { text: 'Three', value: 'C' }
+            ]
+        },
+        method : {
+            clickBind : function(e){
+                this.$data.a = !this.$data.a;
+            }
+        },
+    })
+
+</script>
+
+
+

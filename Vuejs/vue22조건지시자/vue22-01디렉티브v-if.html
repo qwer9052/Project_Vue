@@ -72,7 +72,7 @@
     </div>
 
     <h2>v-if/v-else-if/v-else 연습 4 : 실습</h2>
-    <div id="app5">
+    <div id="app4">
         <button v-on:click="clickBind">클릭</button>
         <span v-if="type === 1">
             A
@@ -89,3 +89,81 @@
     </div>
 </body>
 </html>
+
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: "#app1",
+        data:{
+            awesome: true,
+        },
+        template: null,
+        methods: {
+        },
+        components:{
+        },
+        computed:{
+        },
+        watch:{
+        }
+    });
+    new Vue({
+        el: "#app2",
+        data:{
+            awesome: false,
+        },
+        template: null,
+        methods: {
+        },
+        components:{
+        },
+        computed:{
+        },
+        watch:{
+        }
+    });
+    new Vue({
+        el: "#app3",
+        data:{
+            awesome: true,
+        },
+        template: null,
+        methods: {
+            clickBind: function(event){
+                this.awesome = !this.awesome;
+            }
+        },
+        components:{
+        },
+        computed:{
+        },
+        watch:{
+        }
+    });
+    new Vue({
+        el: "#app4",
+        data:{
+            type: 1,
+        },
+        template: null,
+        methods: {
+            clickBind: function(event){
+                var numbers = [1, 2, 3]
+               // this.type = Math.random() * 10;
+               this.type = this.type +1;
+
+               if(this.type === 4){
+                    this.type = 1;
+               }
+               //this.type = this.type % 4;
+               
+            }
+        },
+        components:{
+        },
+        computed:{
+        },
+        watch:{
+        }
+    });
+</script>

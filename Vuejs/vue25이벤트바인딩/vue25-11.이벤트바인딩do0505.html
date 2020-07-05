@@ -40,3 +40,41 @@
 
 </body>
 </html>
+
+
+<script src="https://unpkg.com/vue@2.5.16/dist/vue.js"></script>
+
+<script>
+
+
+    new Vue({
+        el: "#app1",
+        data:{
+            num : 0
+        },
+        methods :{
+            clickBtn : function(e){
+                ++this.num;
+            }
+        }
+        
+    });
+    
+    new Vue({
+        el: "#app2",
+        data:{
+            message : 0
+        },
+        methods :{
+            reverseMsg : function(e){
+                console.log(e);
+                this.message = this.messsage__
+            }
+        }
+        
+    });
+
+
+</script>
+
+
